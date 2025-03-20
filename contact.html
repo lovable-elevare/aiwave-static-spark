@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - AIWave</title>
+  <meta name="description" content="Get in touch with AIWave. Our team is here to help answer your questions and provide support." />
+  <meta name="author" content="AIWave" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <a href="index.html" class="flex items-center gap-2">
+            <span class="text-2xl font-bold">AIWave</span>
+          </a>
+          
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="index.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Home</a>
+            <a href="features.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
+            <a href="pricing.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+            <a href="about.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="contact.html" class="font-medium text-foreground">Contact</a>
+          </nav>
+          
+          <div class="hidden md:flex items-center gap-4">
+            <a href="#" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Log in</a>
+            <a href="#" class="bg-primary hover:bg-primary/90 text-white font-medium px-4 py-2 rounded-lg transition-colors">
+              Get Started
+            </a>
+          </div>
+          
+          <button class="md:hidden" id="mobile-menu-button" aria-label="Menu">
+            <i icon-name="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile menu (hidden by default) -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-6 py-4 space-y-4 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+          <nav class="flex flex-col space-y-4">
+            <a href="index.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Home</a>
+            <a href="features.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
+            <a href="pricing.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+            <a href="about.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="contact.html" class="font-medium text-foreground">Contact</a>
+          </nav>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col space-y-4">
+            <a href="#" class="font-medium text-center text-muted-foreground hover:text-foreground transition-colors">Log in</a>
+            <a href="#" class="bg-primary hover:bg-primary/90 text-white font-medium px-4 py-2 rounded-lg transition-colors text-center">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Contact Hero Section -->
+      <section class="pt-32 pb-12 relative">
+        <div class="absolute top-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20 dark:to-transparent -z-10"></div>
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 font-display">
+              Get in <span class="heading-gradient">Touch</span> With Us
+            </h1>
+            <p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+              Have questions about our platform? Want to schedule a demo? Our team is here to help you get the most out of AIWave.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Content Section -->
+      <section class="py-12 md:py-20">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Info -->
+            <div class="space-y-10 animate-on-scroll">
+              <div>
+                <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                <p class="text-muted-foreground mb-8">
+                  Reach out to us using any of the following methods. We're here to help answer your questions and provide the support you need.
+                </p>
+                
+                <div class="space-y-6">
+                  <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                      <i icon-name="map-pin" class="h-6 w-6 text-primary"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Office Location</h4>
+                      <p class="text-muted-foreground">1 World Trade Center, New York, NY 10007, USA</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                      <i icon-name="mail" class="h-6 w-6 text-primary"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Email Us</h4>
+                      <a href="mailto:info@aiwave.com" class="text-primary hover:underline">info@aiwave.com</a>
+                      <p class="text-muted-foreground text-sm mt-1">For general inquiries</p>
+                      
+                      <a href="mailto:support@aiwave.com" class="text-primary hover:underline block mt-2">support@aiwave.com</a>
+                      <p class="text-muted-foreground text-sm mt-1">For technical support</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                      <i icon-name="phone" class="h-6 w-6 text-primary"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Call Us</h4>
+                      <a href="tel:+12125551234" class="text-primary hover:underline">+1 (212) 555-1234</a>
+                      <p class="text-muted-foreground text-sm mt-1">Monday to Friday, 9am - 6pm EST</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-4">
+                    <div class="bg-primary/10 p-3 rounded-lg">
+                      <i icon-name="clock" class="h-6 w-6 text-primary"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-medium">Business Hours</h4>
+                      <p class="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM (EST)</p>
+                      <p class="text-muted-foreground">Saturday - Sunday: Closed</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                <div class="flex gap-4">
+                  <a 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="bg-slate-100 dark:bg-slate-800 p-3 rounded-full hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i icon-name="twitter" class="h-5 w-5"></i>
+                    <span class="sr-only">Twitter</span>
+                  </a>
+                  <a 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="bg-slate-100 dark:bg-slate-800 p-3 rounded-full hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i icon-name="linkedin" class="h-5 w-5"></i>
+                    <span class="sr-only">LinkedIn</span>
+                  </a>
+                  <a 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="bg-slate-100 dark:bg-slate-800 p-3 rounded-full hover:bg-primary hover:text-white transition-colors"
+                  >
+                    <i icon-name="github" class="h-5 w-5"></i>
+                    <span class="sr-only">GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="animate-on-scroll">
+              <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-800">
+                <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+                <form class="space-y-6">
+                  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                    <div>
+                      <label for="first-name" class="block text-sm font-medium text-muted-foreground mb-1">First Name</label>
+                      <input 
+                        type="text" 
+                        id="first-name" 
+                        class="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="John"
+                        required 
+                      />
+                    </div>
+                    <div>
+                      <label for="last-name" class="block text-sm font-medium text-muted-foreground mb-1">Last Name</label>
+                      <input 
+                        type="text" 
+                        id="last-name" 
+                        class="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="Doe"
+                        required 
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label for="email" class="block text-sm font-medium text-muted-foreground mb-1">Email</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      class="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                      placeholder="john.doe@example.com"
+                      required 
+                    />
+                  </div>
+                  
+                  <div>
+                    <label for="inquiry-type" class="block text-sm font-medium text-muted-foreground mb-1">Inquiry Type</label>
+                    <select 
+                      id="inquiry-type" 
+                      class="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                      required
+                    >
+                      <option value="" disabled selected>Select an option</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="support">Technical Support</option>
+                      <option value="sales">Sales Question</option>
+                      <option value="partnership">Partnership Opportunity</option>
+                      <option value="demo">Request a Demo</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label for="message" class="block text-sm font-medium text-muted-foreground mb-1">Message</label>
+                    <textarea 
+                      id="message" 
+                      rows="5" 
+                      class="w-full px-3 py-2 border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                      placeholder="How can we help you?"
+                      required
+                    ></textarea>
+                  </div>
+                  
+                  <div class="flex items-start">
+                    <input 
+                      type="checkbox" 
+                      id="privacy-policy" 
+                      class="mt-1 border border-input"
+                      required 
+                    />
+                    <label for="privacy-policy" class="ml-2 block text-sm text-muted-foreground">
+                      I agree to the <a href="#" class="text-primary hover:underline">Privacy Policy</a> and consent to being contacted regarding my inquiry.
+                    </label>
+                  </div>
+                  
+                  <button 
+                    type="submit"
+                    class="w-full bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section -->
+      <section class="py-12 bg-slate-50 dark:bg-slate-900/50">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg animate-on-scroll">
+            <div class="h-96 w-full">
+              <iframe
+                title="AIWave Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.57348593182!2d-74.00599484871341!3d40.7112546952935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a197c06b7cb%3A0x74f914471c28a459!2s1%20World%20Trade%20Center%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1693999391442!5m2!1sen!2sus"
+                class="w-full h-full"
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="max-w-3xl mx-auto animate-on-scroll">
+            <h2 class="text-3xl font-bold font-display mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-8">
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">How quickly can I expect a response?</h3>
+                <p class="text-muted-foreground">Our customer support team typically responds to all inquiries within 24 hours during business days. For urgent matters, we recommend using the live chat feature on our dashboard.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Can I schedule a product demo?</h3>
+                <p class="text-muted-foreground">Absolutely! You can request a demo by filling out the contact form above and selecting 'Request Demo' from the dropdown menu. One of our product specialists will get in touch to arrange a time that works for you.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Do you offer custom enterprise solutions?</h3>
+                <p class="text-muted-foreground">Yes, we provide tailored enterprise solutions designed to meet the specific needs of larger organizations. Please contact our sales team through the form above, and we'll work with you to create a custom implementation plan.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Is technical support included in all plans?</h3>
+                <p class="text-muted-foreground">Basic technical support is included with all plans. Premium and Enterprise plans include priority support with faster response times and dedicated support channels.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-12 md:py-20 mt-auto">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <span class="text-xl font-bold">AIWave</span>
+            </div>
+            <p class="text-slate-400 mb-6">
+              Empowering creators and businesses with advanced AI tools for content creation, code generation, and data analysis.
+            </p>
+            <div class="flex gap-4">
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i icon-name="twitter" class="w-5 h-5"></i>
+                <span class="sr-only">Twitter</span>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i icon-name="linkedin" class="w-5 h-5"></i>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i icon-name="github" class="w-5 h-5"></i>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Product</h4>
+            <ul class="space-y-3">
+              <li><a href="features.html" class="text-slate-400 hover:text-white transition-colors">Features</a></li>
+              <li><a href="pricing.html" class="text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">API Documentation</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Changelog</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="about.html" class="text-slate-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Press</a></li>
+              <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Legal</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Data Processing</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-slate-400 text-sm">© 2024 AIWave. All rights reserved.</p>
+          <div class="mt-4 md:mt-0">
+            <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">English (US)</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+    
+    // Animation observer script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // Observe all elements with animate-on-scroll class
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

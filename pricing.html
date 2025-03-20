@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing - AIWave</title>
+  <meta name="description" content="Explore AIWave's simple and transparent pricing plans with no hidden fees. Choose the best plan for your AI needs." />
+  <meta name="author" content="AIWave" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg z-50 border-b border-slate-200 dark:border-slate-800">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex items-center justify-between h-16 md:h-20">
+          <a href="index.html" class="flex items-center gap-2">
+            <span class="text-2xl font-bold">AIWave</span>
+          </a>
+          
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="index.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Home</a>
+            <a href="features.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
+            <a href="pricing.html" class="font-medium text-foreground">Pricing</a>
+            <a href="about.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="contact.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+          </nav>
+          
+          <div class="hidden md:flex items-center gap-4">
+            <a href="#" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Log in</a>
+            <a href="#" class="bg-primary hover:bg-primary/90 text-white font-medium px-4 py-2 rounded-lg transition-colors">
+              Get Started
+            </a>
+          </div>
+          
+          <button class="md:hidden" id="mobile-menu-button" aria-label="Menu">
+            <i icon-name="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile menu (hidden by default) -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-6 py-4 space-y-4 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+          <nav class="flex flex-col space-y-4">
+            <a href="index.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Home</a>
+            <a href="features.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
+            <a href="pricing.html" class="font-medium text-foreground">Pricing</a>
+            <a href="about.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">About</a>
+            <a href="contact.html" class="font-medium text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+          </nav>
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col space-y-4">
+            <a href="#" class="font-medium text-center text-muted-foreground hover:text-foreground transition-colors">Log in</a>
+            <a href="#" class="bg-primary hover:bg-primary/90 text-white font-medium px-4 py-2 rounded-lg transition-colors text-center">
+              Get Started
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Pricing Hero -->
+      <section class="pt-32 pb-12 relative">
+        <div class="absolute top-0 left-0 right-0 h-[50vh] bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20 dark:to-transparent -z-10"></div>
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 font-display">
+              Simple, <span class="heading-gradient">Transparent</span> Pricing
+            </h1>
+            <p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+              Choose the plan that fits your needs. All plans include our core AI features with no hidden fees.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Plans -->
+      <section class="py-12">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Basic Plan -->
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all animate-on-scroll">
+              <div class="p-6">
+                <h3 class="text-lg font-semibold mb-2">Basic</h3>
+                <p class="text-muted-foreground text-sm mb-6">Perfect for individuals and small projects</p>
+                <div class="flex items-baseline mb-6">
+                  <span class="text-4xl font-bold">$19</span>
+                  <span class="text-muted-foreground ml-2">/month</span>
+                </div>
+                
+                <ul class="space-y-3 mb-6">
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>500 AI completions/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>50 image generations/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Standard response time</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Email support</span>
+                  </li>
+                </ul>
+                
+                <a href="#" class="block text-center bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 font-medium px-6 py-2 rounded-lg transition-colors">
+                  Get Started
+                </a>
+              </div>
+            </div>
+            
+            <!-- Pro Plan (Highlighted) -->
+            <div class="bg-white dark:bg-slate-900 border-2 border-primary rounded-xl overflow-hidden shadow-lg relative animate-on-scroll">
+              <div class="absolute top-0 right-0 bg-primary text-white text-xs font-medium px-3 py-1 rounded-bl-lg">
+                Popular
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-semibold mb-2">Pro</h3>
+                <p class="text-muted-foreground text-sm mb-6">Ideal for professionals and growing teams</p>
+                <div class="flex items-baseline mb-6">
+                  <span class="text-4xl font-bold">$49</span>
+                  <span class="text-muted-foreground ml-2">/month</span>
+                </div>
+                
+                <ul class="space-y-3 mb-6">
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>2,000 AI completions/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>200 image generations/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Fast response time</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Priority email & chat support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>API access</span>
+                  </li>
+                </ul>
+                
+                <a href="#" class="block text-center bg-primary hover:bg-primary/90 text-white font-medium px-6 py-2 rounded-lg transition-colors">
+                  Get Started
+                </a>
+              </div>
+            </div>
+            
+            <!-- Enterprise Plan -->
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all animate-on-scroll">
+              <div class="p-6">
+                <h3 class="text-lg font-semibold mb-2">Enterprise</h3>
+                <p class="text-muted-foreground text-sm mb-6">For organizations with advanced needs</p>
+                <div class="flex items-baseline mb-6">
+                  <span class="text-4xl font-bold">$199</span>
+                  <span class="text-muted-foreground ml-2">/month</span>
+                </div>
+                
+                <ul class="space-y-3 mb-6">
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>10,000 AI completions/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>1,000 image generations/month</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Fastest response time</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>24/7 priority support</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Advanced API access</span>
+                  </li>
+                  <li class="flex items-center">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 mr-2 shrink-0"></i>
+                    <span>Custom integrations</span>
+                  </li>
+                </ul>
+                
+                <a href="#" class="block text-center bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 font-medium px-6 py-2 rounded-lg transition-colors">
+                  Contact Sales
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature Comparison -->
+      <section class="py-16 bg-slate-50 dark:bg-slate-900">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="max-w-3xl mx-auto text-center mb-12 animate-on-scroll">
+            <h2 class="text-3xl font-bold font-display mb-6">Compare Plans</h2>
+            <p class="text-muted-foreground">
+              See which plan is right for you with our detailed feature comparison.
+            </p>
+          </div>
+          
+          <div class="overflow-auto">
+            <table class="w-full border-collapse animate-on-scroll">
+              <thead>
+                <tr>
+                  <th class="text-left p-4 border-b border-slate-200 dark:border-slate-800"></th>
+                  <th class="text-center p-4 border-b border-slate-200 dark:border-slate-800">Basic</th>
+                  <th class="text-center p-4 border-b border-slate-200 dark:border-slate-800">Pro</th>
+                  <th class="text-center p-4 border-b border-slate-200 dark:border-slate-800">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">AI Completions</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">500/mo</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">2,000/mo</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">10,000/mo</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">Image Generations</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">50/mo</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">200/mo</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">1,000/mo</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">Max Tokens per Request</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">1,000</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">4,000</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">8,000</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">Support</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">Email Only</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">Email & Chat</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">24/7 Priority</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">API Access</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="x" class="w-5 h-5 text-red-500 inline-block"></i>
+                  </td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 inline-block"></i>
+                  </td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 inline-block"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">Custom Integrations</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="x" class="w-5 h-5 text-red-500 inline-block"></i>
+                  </td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="x" class="w-5 h-5 text-red-500 inline-block"></i>
+                  </td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 inline-block"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">User Seats</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">1</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">5</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">Unlimited</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border-b border-slate-200 dark:border-slate-800 font-medium">Custom Models</td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="x" class="w-5 h-5 text-red-500 inline-block"></i>
+                  </td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="x" class="w-5 h-5 text-red-500 inline-block"></i>
+                  </td>
+                  <td class="text-center p-4 border-b border-slate-200 dark:border-slate-800">
+                    <i icon-name="check" class="w-5 h-5 text-green-500 inline-block"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="py-20">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold font-display mb-12 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-8">
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Can I switch plans later?</h3>
+                <p class="text-muted-foreground">Yes, you can upgrade or downgrade your plan at any time. If you upgrade, the new features will be immediately available. If you downgrade, the changes will apply to your next billing cycle.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">What happens when I reach my monthly limits?</h3>
+                <p class="text-muted-foreground">When you reach your monthly AI completion or image generation limits, you have two options: wait until your limits reset the next month, or upgrade to a higher tier plan for immediate access to higher limits.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Is there a free trial available?</h3>
+                <p class="text-muted-foreground">Yes, we offer a 14-day free trial of our Pro plan, with no credit card required. You'll get full access to all Pro features so you can evaluate if it meets your needs.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Can I get a refund if I'm not satisfied?</h3>
+                <p class="text-muted-foreground">We offer a 30-day money-back guarantee for new subscribers. If you're not satisfied with our service, contact our support team within 30 days of your initial purchase for a full refund.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">Do you offer custom enterprise plans?</h3>
+                <p class="text-muted-foreground">Yes, we offer tailored enterprise solutions for organizations with specific requirements. Contact our sales team to discuss your needs and get a custom quote.</p>
+              </div>
+              
+              <div class="animate-on-scroll">
+                <h3 class="text-xl font-semibold mb-2">What payment methods do you accept?</h3>
+                <p class="text-muted-foreground">We accept all major credit cards (Visa, Mastercard, American Express, Discover), PayPal, and for enterprise customers, we can arrange invoice-based payments.</p>
+              </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+              <p class="text-lg mb-4">Still have questions?</p>
+              <a
+                href="contact.html"
+                class="text-primary font-medium hover:underline"
+              >
+                Contact our support team
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-12 md:py-20 mt-auto">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div>
+            <div class="flex items-center gap-2 mb-6">
+              <span class="text-xl font-bold">AIWave</span>
+            </div>
+            <p class="text-slate-400 mb-6">
+              Empowering creators and businesses with advanced AI tools for content creation, code generation, and data analysis.
+            </p>
+            <div class="flex gap-4">
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i icon-name="twitter" class="w-5 h-5"></i>
+                <span class="sr-only">Twitter</span>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i icon-name="linkedin" class="w-5 h-5"></i>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+              <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <i icon-name="github" class="w-5 h-5"></i>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Product</h4>
+            <ul class="space-y-3">
+              <li><a href="features.html" class="text-slate-400 hover:text-white transition-colors">Features</a></li>
+              <li><a href="pricing.html" class="text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">API Documentation</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Changelog</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Company</h4>
+            <ul class="space-y-3">
+              <li><a href="about.html" class="text-slate-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Careers</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Press</a></li>
+              <li><a href="contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Legal</h4>
+            <ul class="space-y-3">
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Data Processing</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-slate-400 text-sm">© 2024 AIWave. All rights reserved.</p>
+          <div class="mt-4 md:mt-0">
+            <a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">English (US)</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+    
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    });
+    
+    // Animation observer script
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // Observe all elements with animate-on-scroll class
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      elements.forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
