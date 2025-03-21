@@ -13,11 +13,842 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
     <!-- Lovable Script - Required for new features -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="min-h-screen flex flex-col">
+      <!-- Header / Navbar -->
+      <header class="fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 md:px-12 flex items-center justify-between">
+          <a href="#hero" class="text-2xl font-display font-bold text-foreground relative z-10 flex items-center gap-2">
+            <span class="relative w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+              <span class="absolute inset-0 bg-primary opacity-20 rounded-full animate-pulse"></span>
+              <span class="text-white font-bold text-sm">AI</span>
+            </span>
+            <span class="tracking-tight">Wave</span>
+          </a>
+
+          <!-- Desktop menu -->
+          <nav class="hidden md:flex items-center gap-8">
+            <ul class="flex gap-6">
+              <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+              <li><a href="#features" class="nav-link" data-section="features">Features</a></li>
+              <li><a href="#pricing" class="nav-link" data-section="pricing">Pricing</a></li>
+              <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+              <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+              <a href="#" class="text-sm font-medium text-foreground/80 hover:text-primary transition-colors">Login</a>
+              <a href="#" class="text-sm font-medium bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg transition-colors">Get Started</a>
+            </div>
+          </nav>
+
+          <!-- Mobile menu toggle -->
+          <button class="md:hidden text-foreground" id="mobile-menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon hidden">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-background/95 backdrop-blur-lg z-40 pt-20 px-6 transition-transform duration-300 ease-in-out md:hidden translate-x-full">
+          <nav class="flex flex-col gap-6">
+            <ul class="flex flex-col gap-4">
+              <li><a href="#hero" class="text-lg font-medium transition-colors block py-2 mobile-link" data-section="hero">Home</a></li>
+              <li><a href="#features" class="text-lg font-medium transition-colors block py-2 mobile-link" data-section="features">Features</a></li>
+              <li><a href="#pricing" class="text-lg font-medium transition-colors block py-2 mobile-link" data-section="pricing">Pricing</a></li>
+              <li><a href="#about" class="text-lg font-medium transition-colors block py-2 mobile-link" data-section="about">About</a></li>
+              <li><a href="#contact" class="text-lg font-medium transition-colors block py-2 mobile-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="flex flex-col gap-4 mt-4">
+              <a href="#" class="text-lg font-medium text-foreground/80 hover:text-primary transition-colors block py-2">Login</a>
+              <a href="#" class="text-lg font-medium bg-primary hover:bg-primary/90 text-white px-5 py-3 rounded-lg transition-colors text-center">Get Started</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="section relative pt-32 pb-20 overflow-hidden">
+          <!-- Background decoration -->
+          <div class="absolute top-0 left-0 right-0 h-[70vh] bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20 dark:to-transparent -z-10"></div>
+          <div class="absolute top-20 left-1/2 w-[800px] h-[800px] bg-blue-100/30 dark:bg-blue-900/10 rounded-full blur-3xl -translate-x-1/2 -z-10"></div>
+          
+          <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-4xl mx-auto text-center">
+              <!-- Badge -->
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 mb-8 animate-on-scroll">
+                <div class="flex">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 fill-yellow-400 text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 fill-yellow-400 text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 fill-yellow-400 text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 fill-yellow-400 text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 fill-yellow-400 text-yellow-400"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span class="text-sm font-medium text-blue-800 dark:text-blue-200">Rated 5.0 by over 1,000+ users</span>
+              </div>
+              
+              <!-- Headline -->
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 font-display animate-on-scroll">
+                <span>Unleash Your</span>
+                <span class="heading-gradient">Creativity</span>
+                <span>with AI-Powered Tools</span>
+              </h1>
+              
+              <!-- Subheading -->
+              <p class="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto animate-on-scroll">
+                The ultimate AI platform that helps you create stunning content, generate code, analyze data, and more. Experience the power of artificial intelligence designed for the modern world.
+              </p>
+              
+              <!-- CTA Buttons -->
+              <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-on-scroll">
+                <a href="#" class="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group">
+                  Get Started Free
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="#" class="bg-foreground/5 hover:bg-foreground/10 text-foreground font-medium px-8 py-3 rounded-lg transition-all">
+                  View Demos
+                </a>
+              </div>
+              
+              <!-- Hero Image -->
+              <div class="relative mx-auto animate-on-scroll">
+                <div class="relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                    alt="AI Platform Dashboard" 
+                    class="w-full h-auto object-cover"
+                  />
+                </div>
+                
+                <!-- Floating Cards -->
+                <div class="absolute -left-10 top-1/3 glass-card p-4 rounded-lg shadow-lg max-w-[200px] animate-float hidden md:block">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                      <span class="text-green-600 text-xs font-bold">+27%</span>
+                    </div>
+                    <span class="font-medium text-sm">Productivity</span>
+                  </div>
+                  <p class="text-xs text-muted-foreground">Users report 27% increase in productivity after using our AI tools</p>
+                </div>
+                
+                <div class="absolute -right-10 bottom-1/4 glass-card p-4 rounded-lg shadow-lg max-w-[200px] animate-float delay-500 hidden md:block">
+                  <div class="flex items-center gap-3 mb-2">
+                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center">
+                      <span class="text-purple-600 text-xs font-bold">ML</span>
+                    </div>
+                    <span class="font-medium text-sm">Smart Learning</span>
+                  </div>
+                  <p class="text-xs text-muted-foreground">Our models continuously learn from your usage patterns</p>
+                </div>
+              </div>
+              
+              <!-- Clients -->
+              <div class="mt-16 animate-on-scroll">
+                <p class="text-sm text-muted-foreground mb-6">TRUSTED BY LEADING COMPANIES</p>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+                  <div class="flex justify-center">
+                    <span class="text-lg font-bold text-muted-foreground/50 grayscale hover:grayscale-0 hover:text-foreground transition-all cursor-pointer">Microsoft</span>
+                  </div>
+                  <div class="flex justify-center">
+                    <span class="text-lg font-bold text-muted-foreground/50 grayscale hover:grayscale-0 hover:text-foreground transition-all cursor-pointer">Google</span>
+                  </div>
+                  <div class="flex justify-center">
+                    <span class="text-lg font-bold text-muted-foreground/50 grayscale hover:grayscale-0 hover:text-foreground transition-all cursor-pointer">Adobe</span>
+                  </div>
+                  <div class="flex justify-center">
+                    <span class="text-lg font-bold text-muted-foreground/50 grayscale hover:grayscale-0 hover:text-foreground transition-all cursor-pointer">Spotify</span>
+                  </div>
+                  <div class="flex justify-center">
+                    <span class="text-lg font-bold text-muted-foreground/50 grayscale hover:grayscale-0 hover:text-foreground transition-all cursor-pointer">IBM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section py-24 bg-gradient-to-b from-background to-background/90 relative">
+          <div class="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20 dark:to-transparent -z-10"></div>
+          
+          <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+              <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">
+                Powerful AI Features, <span class="heading-gradient">Simplified</span>
+              </h2>
+              <p class="text-lg text-muted-foreground">
+                Our platform combines multiple AI capabilities into one intuitive interface,
+                making advanced technology accessible to everyone.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <!-- Feature 1 -->
+              <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-on-scroll">
+                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-purple-500"><path d="M15 4V2"></path><path d="M15 16v-2"></path><path d="M8 9h2"></path><path d="M20 9h2"></path><path d="M17.7 11.7a6 6 0 1 1-8.5-8.5"></path><path d="M9 15a3 3 0 1 0 6 0"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">AI Content Creation</h3>
+                <p class="text-muted-foreground">Create high-quality content in seconds with our advanced AI algorithms trained on diverse data sources.</p>
+              </div>
+              
+              <!-- Feature 2 -->
+              <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-on-scroll">
+                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-blue-500"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Code Generation</h3>
+                <p class="text-muted-foreground">Automatically generate clean, efficient code in multiple programming languages with a simple prompt.</p>
+              </div>
+              
+              <!-- Feature 3 -->
+              <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-on-scroll">
+                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-green-500"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path><line x1="16" y1="5" x2="22" y2="5"></line><line x1="19" y1="2" x2="19" y2="8"></line><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Image Processing</h3>
+                <p class="text-muted-foreground">Transform, enhance, and generate images using state-of-the-art computer vision techniques.</p>
+              </div>
+              
+              <!-- Feature 4 -->
+              <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-on-scroll">
+                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-amber-500"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M13 8H7"></path><path d="M17 12H7"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Natural Language Processing</h3>
+                <p class="text-muted-foreground">Understand, analyze, and generate human language with remarkable accuracy and context awareness.</p>
+              </div>
+              
+              <!-- Feature 5 -->
+              <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-on-scroll">
+                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-red-500"><path d="M3 3v18h18"></path><path d="m13 17 4-4-4-4"></path><path d="M19 17v-4h-4"></path><path d="M8 7v4"></path><path d="M12 13V7"></path><path d="M16 13V7"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Data Analysis</h3>
+                <p class="text-muted-foreground">Extract meaningful insights from your data through automated analysis and visualization tools.</p>
+              </div>
+              
+              <!-- Feature 6 -->
+              <div class="bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 animate-on-scroll">
+                <div class="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-indigo-500"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Knowledge Base</h3>
+                <p class="text-muted-foreground">Access a vast knowledge base that stays updated with the latest information and research.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section py-24 relative overflow-hidden">
+          <!-- Background decoration -->
+          <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-100/50 dark:bg-blue-900/10 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-100/50 dark:bg-purple-900/10 rounded-full blur-3xl -z-10"></div>
+          
+          <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+              <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">
+                Loved by <span class="heading-gradient">Industry Leaders</span>
+              </h2>
+              <p class="text-lg text-muted-foreground">
+                See what professionals across various industries are saying about our AI platform.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-on-scroll">
+              <!-- Testimonial 1 -->
+              <div class="glass-card rounded-xl p-6 shadow-sm">
+                <div class="mb-6">
+                  <svg class="h-8 w-8 text-slate-400" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                  </svg>
+                </div>
+                <p class="text-lg mb-6">This AI platform has completely transformed our workflow. The code generation feature alone has saved us hundreds of development hours.</p>
+                <div class="flex items-center">
+                  <img 
+                    src="https://randomuser.me/api/portraits/women/32.jpg" 
+                    alt="Sarah Johnson" 
+                    class="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 class="font-semibold">Sarah Johnson</h4>
+                    <p class="text-sm text-muted-foreground">CTO, TechSolutions Inc</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 2 -->
+              <div class="glass-card rounded-xl p-6 shadow-sm">
+                <div class="mb-6">
+                  <svg class="h-8 w-8 text-slate-400" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                  </svg>
+                </div>
+                <p class="text-lg mb-6">The content creation capabilities are mind-blowing. What used to take our marketing team days now happens in minutes with better results.</p>
+                <div class="flex items-center">
+                  <img 
+                    src="https://randomuser.me/api/portraits/men/44.jpg" 
+                    alt="Michael Chen" 
+                    class="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 class="font-semibold">Michael Chen</h4>
+                    <p class="text-sm text-muted-foreground">Marketing Director, Innovate Co</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 3 -->
+              <div class="glass-card rounded-xl p-6 shadow-sm">
+                <div class="mb-6">
+                  <svg class="h-8 w-8 text-slate-400" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+                    <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                  </svg>
+                </div>
+                <p class="text-lg mb-6">As a researcher, I've found the data analysis tools incredibly powerful. The platform handles complex datasets with ease and provides meaningful insights.</p>
+                <div class="flex items-center">
+                  <img 
+                    src="https://randomuser.me/api/portraits/women/68.jpg" 
+                    alt="Dr. Emily Rodriguez" 
+                    class="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 class="font-semibold">Dr. Emily Rodriguez</h4>
+                    <p class="text-sm text-muted-foreground">Lead Researcher, ScienceLab</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="section py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950">
+          <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+              <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">
+                Simple, <span class="heading-gradient">Transparent</span> Pricing
+              </h2>
+              <p class="text-lg text-muted-foreground mb-10">
+                Choose the perfect plan for your needs. All plans include core AI features.
+              </p>
+
+              <div class="flex items-center justify-center mb-12">
+                <div class="bg-slate-100 dark:bg-slate-800 p-1 rounded-full flex items-center">
+                  <button
+                    class="px-4 py-2 rounded-full text-sm font-medium transition-all bg-white dark:bg-slate-700 shadow-sm billing-toggle active"
+                    data-billing="monthly"
+                  >
+                    Monthly
+                  </button>
+                  <button
+                    class="px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-600 dark:text-slate-400 billing-toggle"
+                    data-billing="yearly"
+                  >
+                    Yearly <span class="text-green-600 text-xs font-bold">Save 20%</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-on-scroll" id="pricing-plans">
+              <!-- Pricing plans will be populated via JavaScript -->
+            </div>
+
+            <div class="mt-16 text-center max-w-2xl mx-auto animate-on-scroll">
+              <p class="text-lg mb-4">Need a custom plan for your enterprise?</p>
+              <a
+                href="#contact"
+                class="inline-flex items-center text-primary font-medium hover:underline"
+              >
+                Contact our sales team
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="section py-24 relative overflow-hidden">
+          <!-- Background decoration -->
+          <div class="absolute inset-0 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 opacity-80"></div>
+            <div class="absolute top-0 left-1/4 bg-blue-200 dark:bg-blue-900/30 w-1/3 h-1/3 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 bg-indigo-200 dark:bg-indigo-900/30 w-1/3 h-1/3 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div class="container mx-auto px-6 md:px-12">
+            <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 animate-on-scroll">
+              <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold font-display mb-6">
+                  Ready to Transform Your Workflow with AI?
+                </h2>
+                <p class="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                  Join thousands of individuals and businesses already using our platform to boost productivity,
+                  creativity, and efficiency.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href="#" 
+                    class="bg-primary hover:bg-primary/90 text-white font-medium px-8 py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group"
+                  >
+                    Start Your Free Trial
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </a>
+                  <a 
+                    href="#" 
+                    class="bg-foreground/5 hover:bg-foreground/10 text-foreground font-medium px-8 py-3 rounded-lg transition-all"
+                  >
+                    Schedule a Demo
+                  </a>
+                </div>
+              </div>
+              
+              <div class="flex flex-col md:flex-row items-center justify-center gap-8 mt-12 text-center md:text-left">
+                <div class="flex-1">
+                  <h4 class="text-xl font-semibold mb-2">No credit card required</h4>
+                  <p class="text-muted-foreground">Start with our free plan and upgrade when you're ready.</p>
+                </div>
+                <div class="h-px w-full md:h-16 md:w-px bg-slate-200 dark:bg-slate-800"></div>
+                <div class="flex-1">
+                  <h4 class="text-xl font-semibold mb-2">Cancel anytime</h4>
+                  <p class="text-muted-foreground">No long-term contracts or hidden fees.</p>
+                </div>
+                <div class="h-px w-full md:h-16 md:w-px bg-slate-200 dark:bg-slate-800"></div>
+                <div class="flex-1">
+                  <h4 class="text-xl font-semibold mb-2">24/7 Support</h4>
+                  <p class="text-muted-foreground">Our team is always available to help you succeed.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-16">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+            <!-- Logo and description -->
+            <div class="col-span-2">
+              <a href="#" class="text-2xl font-display font-bold text-foreground flex items-center gap-2 mb-4">
+                <span class="relative w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                  <span class="text-white font-bold text-sm">AI</span>
+                </span>
+                <span class="tracking-tight">Wave</span>
+              </a>
+              <p class="text-muted-foreground mb-6 max-w-md">
+                Empowering creators, developers, and businesses with the most advanced AI tools for content creation, code generation, and data analysis.
+              </p>
+              
+              <div class="flex gap-4">
+                <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">
+                  <span class="sr-only">Twitter</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-1-4.8 4-7.6 7.5-4.9.8-.8 1.4-1.6 2-2.4.3-.1 2.5 1 2.5 1L22 4z" />
+                  </svg>
+                </a>
+                <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">
+                  <span class="sr-only">LinkedIn</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a href="#" class="text-muted-foreground hover:text-foreground transition-colors">
+                  <span class="sr-only">GitHub</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Links columns -->
+            <div class="space-y-4">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">Product</h3>
+              <ul class="space-y-3">
+                <li><a href="#features" class="text-muted-foreground hover:text-foreground transition-colors">Features</a></li>
+                <li><a href="#pricing" class="text-muted-foreground hover:text-foreground transition-colors">Pricing</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Integrations</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Changelog</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Roadmap</a></li>
+              </ul>
+            </div>
+            
+            <div class="space-y-4">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">Support</h3>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Documentation</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Guides</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">API Reference</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Help Center</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Status</a></li>
+              </ul>
+            </div>
+            
+            <div class="space-y-4">
+              <h3 class="text-sm font-semibold uppercase tracking-wider text-foreground">Company</h3>
+              <ul class="space-y-3">
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">About Us</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Blog</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Careers</a></li>
+                <li><a href="#contact" class="text-muted-foreground hover:text-foreground transition-colors">Contact</a></li>
+                <li><a href="#" class="text-muted-foreground hover:text-foreground transition-colors">Press</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="border-t border-slate-200 dark:border-slate-800 mt-12 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+              <p class="text-muted-foreground text-sm">
+                &copy; <span id="copyright-year"></span> AIWave. All rights reserved.
+              </p>
+              <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms of Service</a>
+                <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</a>
+                <a href="#" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Set the copyright year
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      // Pricing plans data
+      const pricingPlans = {
+        monthly: [
+          {
+            name: "Basic",
+            price: 19,
+            description: "Perfect for individuals and small projects",
+            features: [
+              "5,000 AI completions/mo",
+              "100 image generations/mo",
+              "Basic code generation",
+              "Standard support",
+              "Up to 3 users"
+            ],
+            cta: "Start Basic",
+            highlight: false
+          },
+          {
+            name: "Pro",
+            price: 49,
+            description: "Ideal for professionals and growing teams",
+            features: [
+              "20,000 AI completions/mo",
+              "500 image generations/mo",
+              "Advanced code generation",
+              "Priority support",
+              "Up to 10 users",
+              "Custom model fine-tuning",
+              "API access"
+            ],
+            cta: "Start Pro",
+            highlight: true
+          },
+          {
+            name: "Enterprise",
+            price: 99,
+            description: "For organizations with advanced needs",
+            features: [
+              "Unlimited AI completions",
+              "Unlimited image generations",
+              "Expert code generation",
+              "Dedicated support",
+              "Unlimited users",
+              "Custom model fine-tuning",
+              "Full API access",
+              "SSO & advanced security",
+              "Custom integrations"
+            ],
+            cta: "Contact Sales",
+            highlight: false
+          }
+        ],
+        yearly: [
+          {
+            name: "Basic",
+            price: 15,
+            description: "Perfect for individuals and small projects",
+            features: [
+              "5,000 AI completions/mo",
+              "100 image generations/mo",
+              "Basic code generation",
+              "Standard support",
+              "Up to 3 users"
+            ],
+            cta: "Start Basic",
+            highlight: false
+          },
+          {
+            name: "Pro",
+            price: 39,
+            description: "Ideal for professionals and growing teams",
+            features: [
+              "20,000 AI completions/mo",
+              "500 image generations/mo",
+              "Advanced code generation",
+              "Priority support",
+              "Up to 10 users",
+              "Custom model fine-tuning",
+              "API access"
+            ],
+            cta: "Start Pro",
+            highlight: true
+          },
+          {
+            name: "Enterprise",
+            price: 79,
+            description: "For organizations with advanced needs",
+            features: [
+              "Unlimited AI completions",
+              "Unlimited image generations",
+              "Expert code generation",
+              "Dedicated support",
+              "Unlimited users",
+              "Custom model fine-tuning",
+              "Full API access",
+              "SSO & advanced security",
+              "Custom integrations"
+            ],
+            cta: "Contact Sales",
+            highlight: false
+          }
+        ]
+      };
+
+      // Function to render pricing plans
+      function renderPricingPlans(cycle) {
+        const plansContainer = document.getElementById('pricing-plans');
+        plansContainer.innerHTML = '';
+        
+        pricingPlans[cycle].forEach(plan => {
+          const planEl = document.createElement('div');
+          planEl.className = `rounded-xl overflow-hidden transition-all duration-300 ${
+            plan.highlight
+              ? 'border-2 border-primary shadow-lg shadow-primary/10 scale-105'
+              : 'border border-slate-200 dark:border-slate-800'
+          }`;
+          
+          let planHtml = '';
+          
+          if (plan.highlight) {
+            planHtml += `<div class="bg-primary text-white text-center py-2 text-sm font-medium">Most Popular</div>`;
+          }
+          
+          planHtml += `
+            <div class="p-6 bg-white dark:bg-slate-900">
+              <h3 class="text-2xl font-bold mb-2">${plan.name}</h3>
+              <p class="text-muted-foreground mb-6">${plan.description}</p>
+              <div class="mb-6">
+                <span class="text-4xl font-bold">$${plan.price}</span>
+                <span class="text-muted-foreground">/month</span>
+                ${cycle === 'yearly' ? `<span class="block text-green-600 text-sm font-medium mt-1">Billed annually (save 20%)</span>` : ''}
+              </div>
+              <a
+                href="#"
+                class="block text-center py-3 px-6 rounded-lg font-medium transition-colors w-full ${
+                  plan.highlight
+                    ? 'bg-primary hover:bg-primary/90 text-white'
+                    : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-foreground'
+                }"
+              >
+                ${plan.cta}
+              </a>
+            </div>
+            <div class="p-6 bg-slate-50 dark:bg-slate-950 flex-grow">
+              <p class="text-sm font-medium text-foreground mb-4">Features include:</p>
+              <ul class="space-y-3">
+                ${plan.features.map(feature => `
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-green-500 mr-2 shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span class="text-sm text-slate-700 dark:text-slate-300">${feature}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          `;
+          
+          planEl.innerHTML = planHtml;
+          plansContainer.appendChild(planEl);
+        });
+      }
+
+      // Initialize pricing plans
+      renderPricingPlans('monthly');
+
+      // Toggle pricing cycle
+      document.querySelectorAll('.billing-toggle').forEach(button => {
+        button.addEventListener('click', () => {
+          const cycle = button.getAttribute('data-billing');
+          
+          // Update active state
+          document.querySelectorAll('.billing-toggle').forEach(btn => {
+            btn.classList.remove('active', 'bg-white', 'dark:bg-slate-700', 'shadow-sm');
+            btn.classList.add('text-slate-600', 'dark:text-slate-400');
+          });
+          
+          button.classList.add('active', 'bg-white', 'dark:bg-slate-700', 'shadow-sm');
+          button.classList.remove('text-slate-600', 'dark:text-slate-400');
+          
+          // Render plans for the selected cycle
+          renderPricingPlans(cycle);
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.querySelector('.menu-icon');
+      const closeIcon = document.querySelector('.close-icon');
+      
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('translate-x-full');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on links
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+          menuIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
+
+      // Scroll event for navbar
+      const navbar = document.getElementById('navbar');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add('glass-effect', 'py-3', 'shadow-sm');
+          navbar.classList.remove('py-6', 'bg-transparent');
+        } else {
+          navbar.classList.remove('glass-effect', 'py-3', 'shadow-sm');
+          navbar.classList.add('py-6', 'bg-transparent');
+        }
+        
+        // Update active navigation link based on scroll position
+        const sections = ['hero', 'features', 'testimonials', 'pricing', 'contact'];
+        for (const sectionId of sections) {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            const isInView = rect.top <= 150 && rect.bottom >= 150;
+            if (isInView) {
+              // Update desktop menu
+              document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active', 'text-primary');
+                link.classList.add('text-foreground/80', 'hover:text-primary');
+                const activeIndicator = link.querySelector('span');
+                if (activeIndicator) activeIndicator.classList.remove('w-full');
+              });
+              
+              const activeLinks = document.querySelectorAll(`.nav-link[data-section="${sectionId}"]`);
+              activeLinks.forEach(link => {
+                link.classList.add('active', 'text-primary');
+                link.classList.remove('text-foreground/80');
+                
+                // Create or update the active indicator
+                let indicator = link.querySelector('span');
+                if (!indicator) {
+                  indicator = document.createElement('span');
+                  indicator.className = 'absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 w-0';
+                  link.appendChild(indicator);
+                }
+                indicator.classList.add('w-full');
+              });
+              
+              // Update mobile menu
+              document.querySelectorAll('.mobile-link').forEach(link => {
+                link.classList.remove('text-primary');
+                link.classList.add('text-foreground/80', 'hover:text-primary');
+              });
+              
+              const activeMobileLinks = document.querySelectorAll(`.mobile-link[data-section="${sectionId}"]`);
+              activeMobileLinks.forEach(link => {
+                link.classList.add('text-primary');
+                link.classList.remove('text-foreground/80');
+              });
+              
+              break;
+            }
+          }
+        }
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Animation on scroll
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        elements.forEach((el) => observer.observe(el));
+        
+        // Initialize nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+          const indicator = document.createElement('span');
+          indicator.className = 'absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 w-0 group-hover:w-full';
+          if (link.classList.contains('active')) {
+            indicator.classList.add('w-full');
+          }
+          link.appendChild(indicator);
+          
+          link.classList.add('relative', 'group');
+        });
+      });
+    </script>
   </body>
 </html>
