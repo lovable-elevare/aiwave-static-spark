@@ -1,12 +1,10 @@
 
 import React, { useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
 import CTA from '../components/CTA';
-import Footer from '../components/Footer';
 
 // Add a script to initialize animation observers once all components are loaded
 const Index = () => {
@@ -33,16 +31,22 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main>
+    <div>
+      <section id="hero">
         <Hero />
+      </section>
+      <section id="features">
         <Features />
+      </section>
+      <section id="testimonials">
         <Testimonials />
+      </section>
+      <section id="pricing">
         <Pricing />
+      </section>
+      <section id="contact">
         <CTA />
-      </main>
-      <Footer />
+      </section>
     </div>
   );
 };

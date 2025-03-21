@@ -5,16 +5,17 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { title: "Home", href: "/" },
-  { title: "Features", href: "/features" },
-  { title: "Pricing", href: "/pricing" },
-  { title: "About", href: "/about" },
-  { title: "Contact", href: "/contact" },
+  { title: "Home", href: "/", section: "hero" },
+  { title: "Features", href: "/features", section: "features" },
+  { title: "Pricing", href: "/pricing", section: "pricing" },
+  { title: "About", href: "/about", section: "about" },
+  { title: "Contact", href: "/contact", section: "contact" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +23,20 @@ const Navbar = () => {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+      }
+
+      // Determine which section is currently in view
+      const sections = ["hero", "features", "testimonials", "pricing", "contact"];
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const isInView = rect.top <= 150 && rect.bottom >= 150;
+          if (isInView) {
+            setActiveSection(section);
+            break;
+          }
+        }
       }
     };
 
@@ -57,10 +72,26 @@ const Navbar = () => {
               <li key={link.title}>
                 <Link
                   to={link.href}
-                  className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group"
+                  className={cn(
+                    "text-sm font-medium transition-colors relative group",
+                    activeSection === link.section || 
+                    (activeSection === "testimonials" && link.section === "features") ||
+                    (link.section === "about" && activeSection === "contact")
+                      ? "text-primary"
+                      : "text-foreground/80 hover:text-primary"
+                  )}
                 >
                   {link.title}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  <span 
+                    className={cn(
+                      "absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300",
+                      activeSection === link.section || 
+                      (activeSection === "testimonials" && link.section === "features") ||
+                      (link.section === "about" && activeSection === "contact")
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    )}
+                  ></span>
                 </Link>
               </li>
             ))}
@@ -103,7 +134,14 @@ const Navbar = () => {
               <li key={link.title}>
                 <Link
                   to={link.href}
-                  className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors block py-2"
+                  className={cn(
+                    "text-lg font-medium transition-colors block py-2",
+                    activeSection === link.section ||
+                    (activeSection === "testimonials" && link.section === "features") ||
+                    (link.section === "about" && activeSection === "contact")
+                      ? "text-primary"
+                      : "text-foreground/80 hover:text-primary"
+                  )}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.title}
